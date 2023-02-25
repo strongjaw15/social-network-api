@@ -1,7 +1,7 @@
-const {ObjectId} = require('mongoose').Types
-const {User, Thought} = require('../models')
+/*const {ObjectId} = require('mongoose').Types*/
+const {User} = require('../models')
 
-// addUser
+// This adds a user.
 const addUser = async (req, res) => {
   try {
     const newUser = await User.create(req.body)
@@ -12,17 +12,18 @@ const addUser = async (req, res) => {
   }
 }
 
-// updateUser
+// This updates a user by id.
 const updateUser = async (req, res) => {
   try {
-    
+    const updatedUser = await User.findByIdAndUpdate(req.params.userId, req.body)
+    res.status(200).json(updatedUser)
   } catch (error) {
     console.error(error)
     return res.status(500)
   }
 }
 
-// getUsers
+// This gets all the users.
 const getUsers = async (req, res) => {
   try {
     const users = await User.find()
@@ -33,7 +34,7 @@ const getUsers = async (req, res) => {
   }
 }
 
-// getUser
+// This gets one user by id.
 const getUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.userId)
@@ -44,10 +45,11 @@ const getUser = async (req, res) => {
   }
 }
 
-// removeUser
+// This deletes one user by id.
 const removeUser = async (req, res) => {
   try {
-    
+    const deletedUser = await User.findByIdAndDelete(req.params.userId)
+    res.status(200).json(deletedUser)
   } catch (error) {
     console.error(error)
     return res.status(500)

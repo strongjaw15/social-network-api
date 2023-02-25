@@ -8,8 +8,8 @@ const {
 router.route('/:thoughtId')
   .post(addReaction)
 
-  // http://localhost:3001/api/reactions/reactionId
-router.route('/:reactionId')
+  // http://localhost:3001/api/reactions/thoughtId/reactionId
+router.route('/:thoughtId/:reactionId')
   .delete(removeReaction)
 
 module.exports = router
