@@ -17,7 +17,7 @@ const addFriend = async (req, res) => {
 const removeFriend = async (req, res) => {
   try {
     const deletedFriend = await User.findByIdAndUpdate(req.params.userId, 
-      {$pull: {friends: {_id: req.params.friendId}}},
+      {$pull: {friends: req.params.friendId}},
       {new: true})
     res.status(200).json(deletedFriend.friends)
   } catch (error) {
