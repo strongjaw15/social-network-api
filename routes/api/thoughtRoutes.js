@@ -12,7 +12,7 @@ router.route('/')
   .post(addThought)
   .get(getThoughts)
 
-  // http://localhost:3001/api/thoughtId
+// http://localhost:3001/api/thoughtId
 router.route('/:thoughtId')
   .get(getThought)
   .put(updateThought)

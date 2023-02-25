@@ -12,7 +12,7 @@ router.route('/')
   .post(addUser)
   .get(getUsers)
 
-  // http://localhost:3001/api/users/userId
+// http://localhost:3001/api/users/userId
 router.route('/:userId')
   .get(getUser)
   .put(updateUser)

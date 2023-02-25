@@ -1,4 +1,3 @@
-/*const {ObjectId} = require('mongoose').Types*/
 const {User} = require('../models')
 
 // This adds a user.

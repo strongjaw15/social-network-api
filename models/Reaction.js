@@ -1,6 +1,7 @@
 const { Schema, Types } = require('mongoose');
 const moment = require('moment')
 
+// This sets up the reaction schema.
 const reactionSchema = new Schema({
   reactionId: {
     type: Schema.Types.ObjectId,
@@ -18,6 +19,7 @@ const reactionSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+    // This formats the date.
     get: function (date) {return moment(date).format('MMMM Do, YYYY, h:mm a')}
   }
 },
