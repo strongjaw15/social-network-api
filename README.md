@@ -1,4 +1,4 @@
-# Social Medai API
+# Social Media API
 
 ## Badges
 
