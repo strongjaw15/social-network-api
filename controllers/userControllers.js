@@ -36,7 +36,7 @@ const getUsers = async (req, res) => {
 // This gets one user by id.
 const getUser = async (req, res) => {
   try {
-    const user = await User.findById(req.params.userId)
+    const user = await User.findById(req.params.userId).populate('friends')
     return res.status(200).json(user)
   } catch (error) {
     console.error(error)
